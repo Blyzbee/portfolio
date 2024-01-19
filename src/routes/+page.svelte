@@ -1,2 +1,11 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import Hexagon from "../components/Hexagon/Hexagon.svelte";
+</script>
+
+<Hexagon hexagonWidth={0}>
+	<Hexagon outlined />
+	<img src="" alt="Dorian URBANIAK" />
+</Hexagon>
+
+<style lang="scss">
+</style>
