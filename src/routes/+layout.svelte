@@ -4,12 +4,14 @@
 </script>
 
 <div class="main_section">
-	<Hexagon header class="header">
-		<header>
-			<h1>Dorian URBANIAK</h1>
-			<h2>Développeur Front-End</h2>
-		</header>
-	</Hexagon>
+	<header>
+		<Hexagon notHeader={false}>
+			<div class="header">
+				<h1>Dorian URBANIAK</h1>
+				<h2>Développeur Front-End</h2>
+			</div>
+		</Hexagon>
+	</header>
 
 	<main>
 		<slot />
@@ -18,17 +20,29 @@
 
 <style lang="scss">
 	.main_section {
-		background-color: var(--color-white);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		width: 100dvw;
 		height: 100dvh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 	}
 
 	header {
-		background-color: var(--color-black);
-		width: 50%;
-		padding: 1rem;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+
+		.header {
+			background-color: var(--color-black);
+			padding: 1rem;
+			width: 80vw;
+			max-width: 500px;
+		}
+
+		h1,
+		h2 {
+			text-align: center;
+			margin: 0;
+		}
 	}
 </style>

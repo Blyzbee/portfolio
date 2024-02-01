@@ -1,54 +1,52 @@
 <script lang="ts">
-	export const hexagonWidth: number = 0;
-	export let outlined = false;
-	export let header = false;
-
-	console.log(outlined);
+	export let Pclass = "";
+	export let notHeader = true;
+	export let banner = false;
 </script>
 
-<div class="hexagon" class:outlined class:header style="">
-	<slot />
+<div class="hexagon" class:notHeader>
+	{#if !banner}
+		<div class="hexagon_part hexagon_part_1"></div>
+	{/if}
+
+	<div class={"child " + Pclass}>
+		<slot />
+	</div>
+
+	<div class="hexagon_part hexagon_part_2"></div>
 </div>
 
 <style lang="scss">
 	.hexagon {
-		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			width: 0;
-			border-left: 50px solid transparent;
-			border-right: 50px solid transparent;
+		.child {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 
-		&::before {
-			top: -29px;
-			border-bottom: 29px solid #3498db;
-		}
+		.hexagon_part {
+			height: 100%;
+			background-color: var(--color-black);
+			aspect-ratio: 80/277;
 
-		&::after {
-			bottom: -29px;
-			border-top: 29px solid #3498db;
+			&_1 {
+				clip-path: polygon(100% 0, 0 50%, 100% 100%);
+				border-right: 1px var(--color-black) solid;
+			}
+			&_2 {
+				clip-path: polygon(0 0, 100% 50%, 0 100%);
+				border-left: 1px var(--color-black) solid;
+			}
 		}
 	}
 
-	.header {
-		&::before,
-		&::after {
-			border-top: 50px solid transparent;
-			border-bottom: 50px solid transparent;
-		}
-
-		&::before {
-			left: -58px;
-			border-right: 29px solid #3498db;
-		}
-
-		&::after {
-			right: -29px;
-			border-left: 29px solid #3498db;
+	.notHeader {
+		.child {
+			aspect-ratio: 1/1;
 		}
 	}
 </style>
