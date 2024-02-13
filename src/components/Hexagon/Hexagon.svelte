@@ -1,52 +1,53 @@
 <script lang="ts">
 	export let Pclass = "";
-	export let notHeader = true;
-	export let banner = false;
+	export let color = "transparent";
+	export let outlined = false;
+	export let width = "100%";
+	export let image: null | string = null;
 </script>
 
-<div class="hexagon" class:notHeader>
-	{#if !banner}
-		<div class="hexagon_part hexagon_part_1"></div>
-	{/if}
-
-	<div class={"child " + Pclass}>
+<div
+	class="hexagon {Pclass}"
+	class:outlined
+	style="background-color: {color}; width: {width};"
+>
+	{#if outlined}
+		<div class="hexagon_mask" style={image && "background-color: #E0E0E0;"}>
+			{#if image}
+				<img src={image} alt="lien" />
+			{:else}
+				<slot />
+			{/if}
+		</div>
+	{:else}
 		<slot />
-	</div>
-
-	<div class="hexagon_part hexagon_part_2"></div>
+	{/if}
 </div>
 
 <style lang="scss">
 	.hexagon {
+		position: relative;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		aspect-ratio: 277/320;
+		clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+	}
+
+	.hexagon_mask {
+		width: calc(100% - 7px);
+		height: calc(100% - 7px);
+		background-color: var(--color-white);
+		clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 
-		.child {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-
-		.hexagon_part {
-			height: 100%;
-			background-color: var(--color-black);
-			aspect-ratio: 80/277;
-
-			&_1 {
-				clip-path: polygon(100% 0, 0 50%, 100% 100%);
-				border-right: 1px var(--color-black) solid;
-			}
-			&_2 {
-				clip-path: polygon(0 0, 100% 50%, 0 100%);
-				border-left: 1px var(--color-black) solid;
-			}
-		}
-	}
-
-	.notHeader {
-		.child {
-			aspect-ratio: 1/1;
+		img {
+			width: 80%;
+			object-fit: cover;
+			filter: brightness(0);
 		}
 	}
 </style>

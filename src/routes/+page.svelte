@@ -1,18 +1,17 @@
 <script lang="ts">
-	import Hexagon from "../components/Hexagon/Hexagon.svelte";
-	import Moi from "../assets/images/moi.jpg";
+	import Section1 from "../components/Sections/Section1.svelte";
+	import Section2 from "../components/Sections/Section2.svelte";
+	import Section3 from "../components/Sections/Section3.svelte";
+	import Section4 from "../components/Sections/Section4.svelte";
 </script>
 
-<div class="moi">
-	<Hexagon>
-		<Hexagon />
-		<img src={Moi} alt="Dorian URBANIAK" />
-	</Hexagon>
-</div>
+<Section1 />
+
+<Section2 />
+
+<Section3 />
+
+<Section4 />
 
 <style lang="scss">
-	.moi {
-		width: 80%;
-		max-width: 500px;
-	}
 </style>
