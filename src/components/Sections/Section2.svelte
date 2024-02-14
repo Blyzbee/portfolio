@@ -4,6 +4,12 @@
 	import Hexagon from "../Hexagon/Hexagon.svelte";
 
 	let currentStep = 1;
+	$: {
+		if (currentStep < 1) currentStep = 3;
+		if (currentStep > 3) currentStep = 1;
+	}
+
+	const projects = [{}];
 </script>
 
 <div class="section_2">

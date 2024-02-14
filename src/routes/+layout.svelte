@@ -1,22 +1,32 @@
 <script lang="ts">
+	import { onMount } from "svelte";
 	import "../app.scss";
 	import HexagonBanner from "../components/Hexagon/HexagonBanner.svelte";
 
 	let isScrollEnabled = true;
-	let scrollPosition = 0;
+	let currentSection = 1;
 	let startY = 0;
+	let windowHeight = 0;
 
+	onMount(() => {
+		windowHeight = window.innerHeight;
+	});
+
+	$: {
+		if (currentSection < 1) currentSection = 1;
+		if (currentSection > 4) currentSection = 4;
+	}
+	$: scrollPosition = (currentSection - 1) * windowHeight;
 	$: dynamicScroll = `translate: 0 -${scrollPosition}px`;
 
 	const handleScroll = (e) => {
 		if (!isScrollEnabled) return;
 
 		if (e.deltaY > 0) {
-			scrollPosition = scrollPosition + e.view.innerHeight;
+			currentSection++;
 		} else {
-			scrollPosition = scrollPosition - e.view.innerHeight;
+			currentSection--;
 		}
-		if (scrollPosition < 0) scrollPosition = 0;
 
 		setScrollTimer();
 	};
@@ -28,11 +38,10 @@
 		const deltaY = currentY - startY;
 
 		if (deltaY > 0) {
-			scrollPosition = scrollPosition - e.view.innerHeight;
+			currentSection--;
 		} else {
-			scrollPosition = scrollPosition + e.view.innerHeight;
+			currentSection++;
 		}
-		if (scrollPosition < 0) scrollPosition = 0;
 
 		setScrollTimer();
 	};
