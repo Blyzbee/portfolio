@@ -1,4 +1,10 @@
 @import "./styles/colors";
+@import "./styles/variables";
+
+@font-face {
+	font-family: "Quantify";
+	src: url("./assets/fonts/Quantify.ttf");
+}
 
 :root {
 	font-family: "Roboto", Arial, sans-serif;
@@ -23,7 +29,10 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
+	font-weight: 100;
+	font-family: "Quantify";
 	margin: 0;
 }
 
@@ -36,7 +45,27 @@ h2 {
 	color: var(--color-primary);
 }
 
-button {
+button,
+a {
 	all: unset;
 	cursor: pointer;
+}
+
+a {
+	color: var(--color-interaction);
+}
+
+.img_cover {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.section_header {
+	display: flex;
+	height: 15dvh;
+}
+
+.section_body {
+	height: 85dvh;
 }

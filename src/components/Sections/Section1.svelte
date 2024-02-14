@@ -13,7 +13,7 @@
 	$: float = `translate: ${offsetX}px ${offsetY}px`;
 	$: float2 = `translate: ${offsetX2}px ${offsetY2}px`;
 
-	function randomInRange(min, max) {
+	function randomInRange(min: number, max: number) {
 		return Math.random() * (max - min) + min;
 	}
 
@@ -30,7 +30,7 @@
 <div class="section_1">
 	<div class="moi">
 		<Hexagon>
-			<img src={Moi} alt="Dorian URBANIAK" />
+			<img src={Moi} alt="Dorian URBANIAK" class="img_cover" />
 		</Hexagon>
 	</div>
 
@@ -65,12 +65,6 @@
 		max-width: 350px;
 		width: 70dvw;
 		position: relative;
-
-		img {
-			object-fit: cover;
-			min-width: 100%;
-			min-height: 100%;
-		}
 	}
 
 	.floating {

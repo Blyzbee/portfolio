@@ -19,7 +19,7 @@
 	$: scrollPosition = (currentSection - 1) * windowHeight;
 	$: dynamicScroll = `translate: 0 -${scrollPosition}px`;
 
-	const handleScroll = (e) => {
+	const handleScroll = (e: WheelEvent) => {
 		if (!isScrollEnabled) return;
 
 		if (e.deltaY > 0) {
@@ -31,7 +31,7 @@
 		setScrollTimer();
 	};
 
-	const handleSlide = (e) => {
+	const handleSlide = (e: TouchEvent) => {
 		if (!isScrollEnabled) return;
 
 		const currentY = e.touches[0].clientY;

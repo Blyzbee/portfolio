@@ -5,7 +5,7 @@
 
 <div
 	class="hexagon"
-	style="margin-top: {banner ? '2rem' : '0'}; {banner &&
+	style="margin-top: {banner ? '1.5rem' : '0'}; {banner &&
 		'margin-left: 0; margin-right: auto'}"
 >
 	{#if !banner}
