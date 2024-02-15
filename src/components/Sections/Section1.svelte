@@ -40,7 +40,13 @@
 		target="_blank"
 		style={float}
 	>
-		<Hexagon outlined color="#000000" image={LinkedinLogo} width="100px" />
+		<Hexagon
+			outlined
+			color="#000000"
+			image={LinkedinLogo}
+			width="100px"
+			alt="Linkedin de Dorian URBANIAK"
+		/>
 	</a>
 	<a
 		class="floating"
@@ -48,7 +54,13 @@
 		target="_blank"
 		style={float2}
 	>
-		<Hexagon outlined color="#000000" image={GithubLogo} width="100px" />
+		<Hexagon
+			outlined
+			color="#000000"
+			image={GithubLogo}
+			width="100px"
+			alt="Github de Dorian URBANIAK"
+		/>
 	</a>
 	<!-- <Hexagon outlined color="#E0E0E0" /> -->
 </div>

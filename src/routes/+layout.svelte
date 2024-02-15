@@ -37,10 +37,12 @@
 		const currentY = e.touches[0].clientY;
 		const deltaY = currentY - startY;
 
-		if (deltaY > 0) {
+		if (deltaY > 100) {
 			currentSection--;
-		} else {
+		} else if (deltaY < -100) {
 			currentSection++;
+		} else {
+			return;
 		}
 
 		setScrollTimer();

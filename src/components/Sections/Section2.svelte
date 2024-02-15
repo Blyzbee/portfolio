@@ -2,40 +2,16 @@
 	import HexagonBanner from "../Hexagon/HexagonBanner.svelte";
 	import arrow from "../../assets/icons/arrow.svg";
 	import Hexagon from "../Hexagon/Hexagon.svelte";
-	import majoreDesktopImage from "../../assets/images/majore_desktop.png";
-	import majorePhoneImage from "../../assets/images/majore_phone.png";
 	import { slide } from "svelte/transition";
 	import Icon from "../Icon.svelte";
+	import { projects } from "../../utils/projects";
 
-	let currentStep = 1;
+	let currentStep = 0;
 	$: {
-		if (currentStep < 1) currentStep = 3;
-		if (currentStep > 3) currentStep = 1;
+		if (currentStep < 0) currentStep = projects.length - 1;
+		if (currentStep > projects.length - 1) currentStep = 0;
 	}
-	$: currentProject = projects[currentStep - 1];
-
-	const projects = [
-		{
-			title: "Majore",
-			description: "blablabla",
-			desktopImage: majoreDesktopImage,
-			phoneImage: majorePhoneImage,
-			link: "https://app.majore.co",
-		},
-		{
-			title: "Koacher",
-			description: "blablabla",
-			desktopImage: majoreDesktopImage,
-			phoneImage: majorePhoneImage,
-			link: "https://koacher.app",
-		},
-		{
-			title: "Matchug",
-			description: "blablabla",
-			desktopImage: majoreDesktopImage,
-			phoneImage: majorePhoneImage,
-		},
-	];
+	$: currentProject = projects[currentStep];
 </script>
 
 <div class="section_2">
@@ -50,10 +26,10 @@
 			<button on:click={() => currentStep--}>
 				<img src={arrow} alt="fleche vers le haut" />
 			</button>
-			{#each [1, 2, 3] as step}
-				<button on:click={() => (currentStep = step)}>
+			{#each projects as step, index}
+				<button on:click={() => (currentStep = index)}>
 					<Hexagon outlined color="black">
-						{#if step === currentStep}
+						{#if index === currentStep}
 							<Hexagon color="black" width="80%" />
 						{/if}
 					</Hexagon>
@@ -146,7 +122,7 @@
 				grid-template-columns: auto 5fr 2fr;
 
 				.controller {
-					width: 2rem;
+					width: 1.5rem;
 					grid-template-rows: repeat(5, 1fr);
 					grid-template-columns: 1fr;
 					button {

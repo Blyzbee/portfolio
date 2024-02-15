@@ -4,6 +4,7 @@
 	export let outlined = false;
 	export let width = "100%";
 	export let image: null | string = null;
+	export let alt: string = "lien";
 </script>
 
 <div
@@ -14,7 +15,7 @@
 	{#if outlined}
 		<div class="hexagon_mask" style={image && "background-color: #E0E0E0;"}>
 			{#if image}
-				<img src={image} alt="lien" />
+				<img src={image} {alt} />
 			{:else}
 				<slot />
 			{/if}
@@ -45,9 +46,9 @@
 		justify-content: center;
 
 		img {
-			width: 80%;
+			max-width: 80%;
+			max-height: 70%;
 			object-fit: cover;
-			filter: brightness(0);
 		}
 	}
 </style>
