@@ -47,7 +47,7 @@
 
 		img {
 			max-width: 80%;
-			max-height: 70%;
+			max-height: 65%;
 			object-fit: cover;
 		}
 	}

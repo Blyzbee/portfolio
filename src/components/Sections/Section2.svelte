@@ -5,6 +5,7 @@
 	import { slide } from "svelte/transition";
 	import Icon from "../Icon.svelte";
 	import { projects } from "../../utils/projects";
+	import { backIn } from "svelte/easing";
 
 	let currentStep = 0;
 	$: {
@@ -42,11 +43,14 @@
 
 		<div>
 			<div class="carousel_container carousel_container_desktop">
-				<img
-					src={currentProject.desktopImage}
-					alt="{currentProject.title} au format ordinateur"
-					transition:slide
-				/>
+				{#key currentStep}
+					<img
+						src={currentProject.desktopImage}
+						alt="{currentProject.title} au format ordinateur"
+						class="img_cover"
+						transition:slide={{ easing: backIn, duration: 500 }}
+					/>
+				{/key}
 			</div>
 			<h3>
 				{currentProject.title}
@@ -59,10 +63,14 @@
 		</div>
 
 		<div class="carousel_container carousel_container_phone">
-			<img
-				src={currentProject.phoneImage}
-				alt="{currentProject.title} au format téléphone"
-			/>
+			{#key currentStep}
+				<img
+					src={currentProject.phoneImage}
+					alt="{currentProject.title} au format téléphone"
+					class="img_cover"
+					transition:slide={{ easing: backIn, duration: 600 }}
+				/>
+			{/key}
 		</div>
 	</div>
 </div>
@@ -102,8 +110,9 @@
 				overflow-y: hidden;
 				border-radius: 10px;
 				box-shadow: 3px 3px 10px;
+
 				img {
-					width: 100%;
+					object-position: top;
 				}
 
 				&_desktop {

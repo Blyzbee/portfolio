@@ -8,7 +8,7 @@
 	let offsetY = 0;
 	let offsetX2 = 0;
 	let offsetY2 = 0;
-	let rayon = 500;
+	let rayon = 100;
 
 	$: float = `translate: ${offsetX}px ${offsetY}px`;
 	$: float2 = `translate: ${offsetX2}px ${offsetY2}px`;
@@ -24,7 +24,7 @@
 		offsetY2 = randomInRange(-rayon, rayon);
 	}
 
-	setInterval(randomFloat, 1000);
+	setInterval(randomFloat, 2000);
 </script>
 
 <div class="section_1">
@@ -38,7 +38,7 @@
 		class="floating"
 		href="https://www.linkedin.com/in/dorian-urbaniak-17b008135/"
 		target="_blank"
-		style={float}
+		style={"bottom: 20%; right: 20%;" + float}
 	>
 		<Hexagon
 			outlined
@@ -52,7 +52,7 @@
 		class="floating"
 		href="https://github.com/Blyzbee"
 		target="_blank"
-		style={float2}
+		style={"top: 20%; left: 20%;" + float2}
 	>
 		<Hexagon
 			outlined
@@ -68,6 +68,7 @@
 <style lang="scss">
 	.section_1 {
 		position: relative;
+		width: 100%;
 		height: 75dvh;
 		display: flex;
 		align-items: center;
@@ -76,13 +77,10 @@
 	.moi {
 		max-width: 350px;
 		width: 70dvw;
-		position: relative;
 	}
 
 	.floating {
 		position: absolute;
-		top: 0;
-		left: 0;
 		transition: translate 10s ease-in-out;
 	}
 </style>

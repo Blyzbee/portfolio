@@ -67,6 +67,10 @@ export const devSkills = [
 		alt: "NodeJS",
 	},
 	{
+		path: "src/assets/icons/typescript.png",
+		alt: "Typescript",
+	},
+	{
 		path: "src/assets/icons/firebase.png",
 		alt: "Firebase",
 	},
@@ -77,10 +81,6 @@ export const devSkills = [
 	{
 		path: "src/assets/icons/Tailwind.png",
 		alt: "Tailwind",
-	},
-	{
-		path: "src/assets/icons/bootstrap.png",
-		alt: "Bootstrap",
 	},
 	{
 		path: "src/assets/icons/php.png",
