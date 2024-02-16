@@ -1,5 +1,32 @@
 <script lang="ts">
+	import Hexagon from "../Hexagon/Hexagon.svelte";
 	import HexagonBanner from "../Hexagon/HexagonBanner.svelte";
+	import { allSkills } from "../../utils/skills";
+
+	const alteroneSkills = [
+		"React.js",
+		"Vue.js",
+		"Node.js",
+		"Typescript",
+		"Firebase",
+		"Git",
+		"Gitlab",
+	];
+	const stratincSkills = [
+		"React.js",
+		"Node.js",
+		"Firebase",
+		"Figma",
+		"Git",
+		"Gitlab",
+	];
+	const biosensSkills = [
+		"Premiere Pro",
+		"Illustrator",
+		"Photoshop",
+		"After Effect",
+	];
+	const servierSkills = ["Premiere Pro", "Illustrator", "Photoshop"];
 </script>
 
 <div class="section_4">
@@ -8,24 +35,76 @@
 			<h2>Mon parcours</h2>
 		</HexagonBanner>
 	</div>
-	<div class="section_body">
+	<div class="scrollable section_body">
 		<div>
 			<h3>Expériences professionnelles</h3>
 			<div>
-				<strong>2023 - Développeur web Front-End :</strong> Alter One - 100% télé-travail
-				- 1 an
+				<strong>2023 - Développeur web Front-End :</strong> Alter One - 100%
+				télé-travail - 1 an
+				<div class="skills">
+					<b>Hard skills :</b>
+					{#each alteroneSkills as skill}
+						<div class="skill">
+							<Hexagon
+								color="#FED872"
+								outlined
+								image={allSkills.find((s) => s.alt === skill)?.path}
+								alt={allSkills.find((s) => s.alt === skill)?.alt}
+							/>
+						</div>
+					{/each}
+				</div>
 			</div>
 			<div>
-				<strong>2022 - Développeur web Front-End :</strong> Strat Inc - 100% télé-travail
-				- 10 mois
+				<strong>2022 - Développeur web Front-End :</strong> Strat Inc - 100%
+				télé-travail - 10 mois
+				<div class="skills">
+					<b>Hard skills :</b>
+					{#each stratincSkills as skill}
+						<div class="skill">
+							<Hexagon
+								color="#FED872"
+								outlined
+								image={allSkills.find((s) => s.alt === skill)?.path}
+								alt={allSkills.find((s) => s.alt === skill)?.alt}
+							/>
+						</div>
+					{/each}
+				</div>
 			</div>
 			<div>
-				<strong>2019 - Monteur audiovisuel :</strong> Biosens Numérique - Paris -
-				4 mois
+				<strong>2019 - Monteur audiovisuel :</strong> Biosens Numérique - Paris
+				- 4 mois
+				<div class="skills">
+					<b>Hard skills :</b>
+					{#each biosensSkills as skill}
+						<div class="skill">
+							<Hexagon
+								color="#FED872"
+								outlined
+								image={allSkills.find((s) => s.alt === skill)?.path}
+								alt={allSkills.find((s) => s.alt === skill)?.alt}
+							/>
+						</div>
+					{/each}
+				</div>
 			</div>
 			<div>
-				<strong>2018 - Chargé de communication :</strong> Laboratoires Servier Industrie
-				- Gidy - 3 mois
+				<strong>2018 - Chargé de communication :</strong> Laboratoires Servier
+				Industrie - Gidy - 3 mois
+				<div class="skills">
+					<b>Hard skills :</b>
+					{#each servierSkills as skill}
+						<div class="skill">
+							<Hexagon
+								color="#FED872"
+								outlined
+								image={allSkills.find((s) => s.alt === skill)?.path}
+								alt={allSkills.find((s) => s.alt === skill)?.alt}
+							/>
+						</div>
+					{/each}
+				</div>
 			</div>
 			<div>
 				<strong>2017 à 2021 - Animateur :</strong> Centre de loisirs - la Ferté St
@@ -54,7 +133,31 @@
 
 <style lang="scss">
 	.section_4 {
-		width: 100%;
-		height: 100dvh;
+		align-self: baseline;
+
+		.section_body {
+			padding: 1rem;
+			overflow-y: scroll;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 3rem;
+
+			h3 {
+				margin-bottom: 1rem;
+			}
+
+			.skills {
+				margin-left: 2rem;
+				margin-bottom: 1rem;
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+				align-items: center;
+
+				.skill {
+					width: 40px;
+				}
+			}
+		}
 	}
 </style>

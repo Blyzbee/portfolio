@@ -63,8 +63,12 @@ export const devSkills = [
 		alt: "Svelte",
 	},
 	{
+		path: "src/assets/icons/vue.png",
+		alt: "Vue.js",
+	},
+	{
 		path: "src/assets/icons/nodejs.png",
-		alt: "NodeJS",
+		alt: "Node.js",
 	},
 	{
 		path: "src/assets/icons/typescript.png",
@@ -114,3 +118,5 @@ export const otherSkills = [
 		alt: "Vercel",
 	},
 ];
+
+export const allSkills = [...devSkills, ...mediaSkills, ...otherSkills];

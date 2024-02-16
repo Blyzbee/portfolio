@@ -13,10 +13,11 @@ export const projects = [
 		phoneImage: "src/assets/images/koacher_phone.png",
 		link: "https://koacher.app",
 	},
-	// {
-	// 	title: "Matchug",
-	// 	description: "blablabla",
-	// 	desktopImage: "src/assets/images/majore_desktop.png",
-	// 	phoneImage: "src/assets/images/majore_phone.png",
-	// },
+	{
+		title: "Jean-Luc URBANIAK",
+		description: "blablabla",
+		desktopImage: "src/assets/images/jeanlucurbaniak_desktop.png",
+		phoneImage: "src/assets/images/jeanlucurbaniak_phone.png",
+		link: "https://jeanlucurbaniak.fr",
+	},
 ];
