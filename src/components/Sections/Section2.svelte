@@ -23,7 +23,10 @@
 	</div>
 
 	<div class="section_body">
-		<div class="controller">
+		<div
+			class="controller"
+			style="grid-template-columns: repeat({projects.length + 2}, 1fr);"
+		>
 			<button on:click={() => currentStep--}>
 				<img src={arrow} alt="fleche vers le haut" />
 			</button>
@@ -85,7 +88,6 @@
 			margin-top: 2rem;
 			width: 17rem;
 			display: grid;
-			grid-template-columns: repeat(5, 1fr);
 			gap: 0.5rem;
 
 			button {
@@ -133,7 +135,7 @@
 				.controller {
 					width: 1.5rem;
 					grid-template-rows: repeat(5, 1fr);
-					grid-template-columns: 1fr;
+					grid-template-columns: 1fr !important;
 					button {
 						&:first-of-type {
 							rotate: 90deg;
