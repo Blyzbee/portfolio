@@ -14,7 +14,10 @@
 	<div class="section_body">
 		<div>
 			<h3>Développement web</h3>
-			<div class="skills">
+			<div
+				class="skills"
+				style="grid-template-columns: repeat({devSkills.length}, 5rem);"
+			>
 				{#each devSkills as skill}
 					<div>
 						<Hexagon
@@ -29,7 +32,10 @@
 		</div>
 		<div>
 			<h3>Multimédia</h3>
-			<div class="skills">
+			<div
+				class="skills"
+				style="grid-template-columns: repeat({mediaSkills.length}, 5rem);"
+			>
 				{#each mediaSkills as skill}
 					<div>
 						<Hexagon
@@ -44,7 +50,10 @@
 		</div>
 		<div>
 			<h3>Autre</h3>
-			<div class="skills">
+			<div
+				class="skills"
+				style="grid-template-columns: repeat({otherSkills.length}, 5rem);"
+			>
 				{#each otherSkills as skill}
 					<div>
 						<Hexagon
@@ -71,7 +80,6 @@
 			}
 			.skills {
 				display: grid;
-				grid-template-columns: repeat(12, 5rem);
 				gap: 1rem;
 				padding: 1rem;
 				overflow-x: scroll;
