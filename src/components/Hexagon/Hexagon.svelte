@@ -3,7 +3,7 @@
 	export let color = "transparent";
 	export let outlined = false;
 	export let width = "100%";
-	export let image: null | string = null;
+	export let image: undefined | string = undefined;
 	export let alt: string = "lien";
 </script>
 
@@ -46,7 +46,7 @@
 		justify-content: center;
 
 		img {
-			max-width: 80%;
+			max-width: 85%;
 			max-height: 65%;
 			object-fit: cover;
 		}

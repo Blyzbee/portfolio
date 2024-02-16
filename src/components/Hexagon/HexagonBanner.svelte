@@ -24,8 +24,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 75%;
-		max-height: 150px;
+		height: 80%;
+		max-height: 160px;
 
 		.child {
 			height: 100%;
