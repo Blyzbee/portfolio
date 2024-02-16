@@ -19,30 +19,52 @@
 	$: scrollPosition = (currentSection - 1) * windowHeight;
 	$: dynamicScroll = `translate: 0 -${scrollPosition}px`;
 
-	const handleScroll = (e: WheelEvent) => {
-		if (!isScrollEnabled) return;
+	const isDivScrollable = (div) => {
+		let stopWhile = false;
+		let currentTarget = div;
 
-		if (e.deltaY > 0) {
+		while (!stopWhile) {
+			if (currentTarget.classList[0] === "main_section") stopWhile = true;
+			else if (currentTarget.classList[0] === "scrollable") stopWhile = true;
+			else currentTarget = currentTarget.parentElement;
+		}
+		if (currentTarget.classList[0] === "scrollable") return currentTarget;
+		else return false;
+	};
+
+	const handleScroll = async (e: WheelEvent) => {
+		if (!isScrollEnabled) return;
+		let scrollableDiv = await isDivScrollable(e.target);
+
+		if (
+			e.deltaY > 0 &&
+			(!scrollableDiv || scrollableDiv.clientHeight === scrollableDiv.scrollTop)
+		) {
 			currentSection++;
-		} else {
+		}
+		if (e.deltaY < 0 && (!scrollableDiv || scrollableDiv.scrollTop === 0)) {
 			currentSection--;
 		}
 
 		setScrollTimer();
 	};
 
-	const handleSlide = (e: TouchEvent) => {
+	const handleSlide = async (e: TouchEvent) => {
 		if (!isScrollEnabled) return;
+		let scrollableDiv = await isDivScrollable(e.target);
 
 		const currentY = e.touches[0].clientY;
 		const deltaY = currentY - startY;
 
-		if (deltaY > 100) {
+		if (deltaY < 100 && deltaY > -100) return;
+		if (deltaY > 100 && (!scrollableDiv || scrollableDiv.scrollTop === 0)) {
 			currentSection--;
-		} else if (deltaY < -100) {
+		}
+		if (
+			deltaY < -100 &&
+			(!scrollableDiv || scrollableDiv.clientHeight === scrollableDiv.scrollTop)
+		) {
 			currentSection++;
-		} else {
-			return;
 		}
 
 		setScrollTimer();
@@ -58,7 +80,7 @@
 
 <div
 	class="main_section"
-	on:wheel|preventDefault={handleScroll}
+	on:wheel={handleScroll}
 	on:touchstart={(e) => (startY = e.touches[0].clientY)}
 	on:touchmove={handleSlide}
 >
