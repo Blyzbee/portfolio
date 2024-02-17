@@ -9,8 +9,6 @@
 	let windowHeight = 0;
 
 	onMount(() => {
-		console.log(window);
-
 		windowHeight = window.screen.height;
 	});
 
