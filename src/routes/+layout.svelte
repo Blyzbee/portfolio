@@ -1,23 +1,17 @@
 <script lang="ts">
-	import { onMount } from "svelte";
 	import "../app.scss";
 	import HexagonBanner from "../components/Hexagon/HexagonBanner.svelte";
 
 	let isScrollEnabled = true;
 	let currentSection = 1;
 	let startY = 0;
-	let windowHeight = 0;
-
-	onMount(() => {
-		windowHeight = window.screen.height;
-	});
 
 	$: {
 		if (currentSection < 1) currentSection = 1;
 		if (currentSection > 4) currentSection = 4;
 	}
-	$: scrollPosition = (currentSection - 1) * windowHeight;
-	$: dynamicScroll = `translate: 0 -${scrollPosition}px`;
+	$: scrollPosition = (currentSection - 1) * 100;
+	$: dynamicScroll = `translate: 0 -${scrollPosition}dvh`;
 
 	const isDivScrollable = (div) => {
 		let stopWhile = false;
