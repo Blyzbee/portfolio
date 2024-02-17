@@ -9,7 +9,9 @@
 	let windowHeight = 0;
 
 	onMount(() => {
-		windowHeight = window.innerHeight;
+		console.log(window);
+
+		windowHeight = window.screen.height;
 	});
 
 	$: {

@@ -1,120 +1,151 @@
+import figma from "../assets/icons/skills/figma.png";
+import ilustrator from "../assets/icons/skills/illustrator.png";
+import photoshop from "../assets/icons/skills/photoshop.png";
+import indesign from "../assets/icons/skills/indesign.png";
+import audition from "../assets/icons/skills/audition.png";
+import afterEffect from "../assets/icons/skills/after-effect.png";
+import premierePro from "../assets/icons/skills/premiere-pro.png";
+import davinci from "../assets/icons/skills/davinci.png";
+import flStudio from "../assets/icons/skills/fl-studio.png";
+import ableton from "../assets/icons/skills/ableton.png";
+
+import html5 from "../assets/icons/skills/html5.png";
+import css3 from "../assets/icons/skills/css3.png";
+import javascript from "../assets/icons/skills/javascript.png";
+import react from "../assets/icons/skills/react.png";
+import svelte from "../assets/icons/skills/svelte.png";
+import vue from "../assets/icons/skills/vue.png";
+import nodejs from "../assets/icons/skills/nodejs.png";
+import typescript from "../assets/icons/skills/typescript.png";
+import firebase from "../assets/icons/skills/firebase.png";
+import mongodb from "../assets/icons/skills/mongodb.png";
+import tailwind from "../assets/icons/skills/Tailwind.png";
+import php from "../assets/icons/skills/php.png";
+import mysql from "../assets/icons/skills/mysql.png";
+
+import git from "../assets/icons/skills/git.png";
+import Github from "../assets/icons/skills/Github.png";
+import gitlab from "../assets/icons/skills/gitlab.png";
+import Netlify from "../assets/icons/skills/Netlify.png";
+import vercel from "../assets/icons/skills/vercel.png";
+
 export const mediaSkills = [
 	{
-		path: "src/assets/icons/figma.png",
+		path: figma,
 		alt: "Figma",
 	},
 	{
-		path: "src/assets/icons/illustrator.png",
+		path: ilustrator,
 		alt: "Illustrator",
 	},
 	{
-		path: "src/assets/icons/photoshop.png",
+		path: photoshop,
 		alt: "Photoshop",
 	},
 	{
-		path: "src/assets/icons/indesign.png",
+		path: indesign,
 		alt: "InDesign",
 	},
 	{
-		path: "src/assets/icons/audition.png",
+		path: audition,
 		alt: "Audition",
 	},
 	{
-		path: "src/assets/icons/after-effect.png",
+		path: afterEffect,
 		alt: "After Effect",
 	},
 	{
-		path: "src/assets/icons/premiere-pro.png",
+		path: premierePro,
 		alt: "Premiere Pro",
 	},
 	{
-		path: "src/assets/icons/davinci.png",
+		path: davinci,
 		alt: "DaVinci Resolve",
 	},
 	{
-		path: "src/assets/icons/fl-studio.png",
+		path: flStudio,
 		alt: "FL Studio",
 	},
 	{
-		path: "src/assets/icons/ableton.png",
+		path: ableton,
 		alt: "Ableton",
 	},
 ];
 
 export const devSkills = [
 	{
-		path: "src/assets/icons/html5.png",
+		path: html5,
 		alt: "HTML 5",
 	},
 	{
-		path: "src/assets/icons/css3.png",
+		path: css3,
 		alt: "CSS 3",
 	},
 	{
-		path: "src/assets/icons/javascript.png",
+		path: javascript,
 		alt: "Javascript",
 	},
 	{
-		path: "src/assets/icons/react.png",
+		path: react,
 		alt: "React.js",
 	},
 	{
-		path: "src/assets/icons/svelte.png",
+		path: svelte,
 		alt: "Svelte",
 	},
 	{
-		path: "src/assets/icons/vue.png",
+		path: vue,
 		alt: "Vue.js",
 	},
 	{
-		path: "src/assets/icons/nodejs.png",
+		path: nodejs,
 		alt: "Node.js",
 	},
 	{
-		path: "src/assets/icons/typescript.png",
+		path: typescript,
 		alt: "Typescript",
 	},
 	{
-		path: "src/assets/icons/firebase.png",
+		path: firebase,
 		alt: "Firebase",
 	},
 	{
-		path: "src/assets/icons/mongodb.png",
+		path: mongodb,
 		alt: "MongoDB",
 	},
 	{
-		path: "src/assets/icons/Tailwind.png",
+		path: tailwind,
 		alt: "Tailwind",
 	},
 	{
-		path: "src/assets/icons/php.png",
+		path: php,
 		alt: "PHP",
 	},
 	{
-		path: "src/assets/icons/mysql.png",
+		path: mysql,
 		alt: "MySQL",
 	},
 ];
 
 export const otherSkills = [
 	{
-		path: "src/assets/icons/git.png",
+		path: git,
 		alt: "Git",
 	},
 	{
-		path: "src/assets/icons/Github.png",
+		path: Github,
 		alt: "Github",
 	},
 	{
-		path: "src/assets/icons/gitlab.png",
+		path: gitlab,
 		alt: "Gitlab",
 	},
 	{
-		path: "src/assets/icons/Netlify.png",
+		path: Netlify,
 		alt: "Netlify",
 	},
 	{
-		path: "src/assets/icons/vercel.png",
+		path: vercel,
 		alt: "Vercel",
 	},
 ];

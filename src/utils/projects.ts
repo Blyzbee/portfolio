@@ -1,23 +1,30 @@
+import majoreDesktop from "../assets/images/projects/majore_desktop.png";
+import majorePhone from "../assets/images/projects/majore_phone.png";
+import koacherDesktop from "../assets/images/projects/koacher_desktop.png";
+import koacherPhone from "../assets/images/projects/koacher_phone.png";
+import urbaniakDesktop from "../assets/images/projects/jeanlucurbaniak_desktop.png";
+import urbaniakPhone from "../assets/images/projects/jeanlucurbaniak_phone.png";
+
 export const projects = [
 	{
 		title: "Majore",
 		description: "blablabla",
-		desktopImage: "src/assets/images/majore_desktop.png",
-		phoneImage: "src/assets/images/majore_phone.png",
+		desktopImage: majoreDesktop,
+		phoneImage: majorePhone,
 		link: "https://app.majore.co",
 	},
 	{
 		title: "Koacher",
 		description: "blablabla",
-		desktopImage: "src/assets/images/koacher_desktop.png",
-		phoneImage: "src/assets/images/koacher_phone.png",
+		desktopImage: koacherDesktop,
+		phoneImage: koacherPhone,
 		link: "https://koacher.app",
 	},
 	{
 		title: "Jean-Luc URBANIAK",
 		description: "blablabla",
-		desktopImage: "src/assets/images/jeanlucurbaniak_desktop.png",
-		phoneImage: "src/assets/images/jeanlucurbaniak_phone.png",
+		desktopImage: urbaniakDesktop,
+		phoneImage: urbaniakPhone,
 		link: "https://jeanlucurbaniak.fr",
 	},
 ];
