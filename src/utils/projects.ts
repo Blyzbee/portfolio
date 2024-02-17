@@ -4,6 +4,8 @@ import koacherDesktop from "../assets/images/projects/koacher_desktop.png";
 import koacherPhone from "../assets/images/projects/koacher_phone.png";
 import urbaniakDesktop from "../assets/images/projects/jeanlucurbaniak_desktop.png";
 import urbaniakPhone from "../assets/images/projects/jeanlucurbaniak_phone.png";
+import dorianDesktop from "../assets/images/projects/dorianurbaniak_desktop.png";
+import dorianPhone from "../assets/images/projects/dorianurbaniak_phone.png";
 
 export const projects = [
 	{
@@ -26,5 +28,11 @@ export const projects = [
 		desktopImage: urbaniakDesktop,
 		phoneImage: urbaniakPhone,
 		link: "https://jeanlucurbaniak.fr",
+	},
+	{
+		title: "Dorian URBANIAK",
+		description: "bim ! mise en abime !",
+		desktopImage: dorianDesktop,
+		phoneImage: dorianPhone,
 	},
 ];
