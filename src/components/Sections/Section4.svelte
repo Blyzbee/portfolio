@@ -137,7 +137,6 @@
 
 		.section_body {
 			padding: 1rem;
-			overflow-y: scroll;
 			display: flex;
 			flex-wrap: wrap;
 			gap: 3rem;

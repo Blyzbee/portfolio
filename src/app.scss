@@ -41,7 +41,8 @@ h1 {
 	font-size: 2.7em;
 }
 
-h2 {
+h2,
+h3 {
 	color: var(--color-primary);
 }
 
@@ -68,4 +69,8 @@ a {
 
 .section_body {
 	height: 85dvh;
+}
+
+.scrollable {
+	overflow-y: scroll;
 }

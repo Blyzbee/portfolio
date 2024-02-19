@@ -16,7 +16,7 @@
 			<h3>Développement web</h3>
 			<div
 				class="skills"
-				style="grid-template-columns: repeat({devSkills.length}, 5rem);"
+				style="grid-template-columns: repeat({devSkills.length}, 10dvh);"
 			>
 				{#each devSkills as skill}
 					<div>
@@ -34,7 +34,7 @@
 			<h3>Multimédia</h3>
 			<div
 				class="skills"
-				style="grid-template-columns: repeat({mediaSkills.length}, 5rem);"
+				style="grid-template-columns: repeat({mediaSkills.length}, 10dvh);"
 			>
 				{#each mediaSkills as skill}
 					<div>
@@ -52,7 +52,7 @@
 			<h3>Autre</h3>
 			<div
 				class="skills"
-				style="grid-template-columns: repeat({otherSkills.length}, 5rem);"
+				style="grid-template-columns: repeat({otherSkills.length}, 10dvh);"
 			>
 				{#each otherSkills as skill}
 					<div>

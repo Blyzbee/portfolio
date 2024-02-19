@@ -68,7 +68,7 @@
 		isScrollEnabled = false;
 		setTimeout(() => {
 			isScrollEnabled = true;
-		}, 500);
+		}, 2000);
 	};
 </script>
 
