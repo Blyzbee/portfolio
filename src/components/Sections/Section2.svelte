@@ -55,14 +55,17 @@
 					/>
 				{/key}
 			</div>
-			<h3>
-				{currentProject.title}
-				{#if currentProject?.link}
-					<a href={currentProject.link} target="_blank"
-						><Icon name="open_in_new" /></a
-					>
-				{/if}
-			</h3>
+			{#if currentProject?.link}
+				<a href={currentProject.link} target="_blank">
+					<h3>
+						{currentProject.title}
+						<Icon name="open_in_new" />
+					</h3>
+				</a>
+			{:else}
+				<h3>{currentProject.title}</h3>
+			{/if}
+			<!-- <p></p> -->
 		</div>
 
 		<div class="carousel_container carousel_container_phone">
@@ -119,7 +122,7 @@
 
 				&_desktop {
 					aspect-ratio: 16/9;
-					margin: 2rem 0 1.5rem 0;
+					margin: 2rem 0 1rem 0;
 				}
 				&_phone {
 					display: none;
@@ -147,6 +150,10 @@
 				}
 
 				.carousel_container {
+					&_desktop {
+						aspect-ratio: unset;
+						height: 65dvh;
+					}
 					&_phone {
 						display: block;
 						margin-top: -3rem;
