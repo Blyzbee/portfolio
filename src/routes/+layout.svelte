@@ -27,7 +27,11 @@
 	};
 
 	const handleScroll = async (e: WheelEvent) => {
-		if (!isScrollEnabled) return;
+		if (!isScrollEnabled) {
+			setScrollTimer();
+			return;
+		}
+		setScrollTimer();
 		let scrollableDiv = await isDivScrollable(e.target);
 
 		if (
@@ -39,12 +43,14 @@
 		if (e.deltaY < 0 && (!scrollableDiv || scrollableDiv.scrollTop === 0)) {
 			currentSection--;
 		}
-
-		setScrollTimer();
 	};
 
 	const handleSlide = async (e: TouchEvent) => {
-		if (!isScrollEnabled) return;
+		if (!isScrollEnabled) {
+			setScrollTimer();
+			return;
+		}
+		setScrollTimer();
 		let scrollableDiv = await isDivScrollable(e.target);
 
 		const currentY = e.touches[0].clientY;
@@ -60,15 +66,13 @@
 		) {
 			currentSection++;
 		}
-
-		setScrollTimer();
 	};
 
 	const setScrollTimer = () => {
 		isScrollEnabled = false;
 		setTimeout(() => {
 			isScrollEnabled = true;
-		}, 2000);
+		}, 300);
 	};
 </script>
 
