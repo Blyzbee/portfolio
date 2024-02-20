@@ -38,9 +38,12 @@
 	<div class="scrollable section_body">
 		<div>
 			<h3>Expériences professionnelles</h3>
-			<div>
-				<strong>2023 - Développeur web Front-End :</strong> Alter One - 100%
-				télé-travail - 1 an
+			<div class="experience">
+				<div>2023</div>
+				<div>
+					<strong>Développeur web Front-End :</strong> Alter One - 100% télé-travail
+					- 1 an
+				</div>
 				<div class="skills">
 					<b>Hard skills :</b>
 					{#each alteroneSkills as skill}
@@ -55,9 +58,12 @@
 					{/each}
 				</div>
 			</div>
-			<div>
-				<strong>2022 - Développeur web Front-End :</strong> Strat Inc - 100%
-				télé-travail - 10 mois
+			<div class="experience">
+				<div>2022</div>
+				<div>
+					<strong>Développeur web Front-End :</strong> Strat Inc - 100% télé-travail
+					- 10 mois
+				</div>
 				<div class="skills">
 					<b>Hard skills :</b>
 					{#each stratincSkills as skill}
@@ -72,9 +78,11 @@
 					{/each}
 				</div>
 			</div>
-			<div>
-				<strong>2019 - Monteur audiovisuel :</strong> Biosens Numérique - Paris
-				- 4 mois
+			<div class="experience">
+				<div>2019</div>
+				<div>
+					<strong>Monteur audiovisuel :</strong> Biosens Numérique - Paris - 4 mois
+				</div>
 				<div class="skills">
 					<b>Hard skills :</b>
 					{#each biosensSkills as skill}
@@ -89,9 +97,12 @@
 					{/each}
 				</div>
 			</div>
-			<div>
-				<strong>2018 - Chargé de communication :</strong> Laboratoires Servier
-				Industrie - Gidy - 3 mois
+			<div class="experience">
+				<div>2018</div>
+				<div>
+					<strong>Chargé de communication :</strong> Laboratoires Servier Industrie
+					- Gidy - 3 mois
+				</div>
 				<div class="skills">
 					<b>Hard skills :</b>
 					{#each servierSkills as skill}
@@ -106,27 +117,47 @@
 					{/each}
 				</div>
 			</div>
-			<div>
-				<strong>2017 à 2021 - Animateur :</strong> Centre de loisirs - la Ferté St
-				Aubin - 4 mois
+			<div class="experience">
+				<div>2017 - 2021</div>
+				<div>
+					<strong>Animateur :</strong> Centre de loisirs - la Ferté St Aubin - 4
+					mois
+				</div>
 			</div>
 		</div>
 		<div>
 			<h3>Scolarité / Formations</h3>
-			<p>
-				<strong>Développement Web Front-End</strong> - Ecole Multimédia - Paris -
-				2022/2023
-			</p>
-			<p>
-				<strong>Formation Théâtrale</strong> - Ecole Auvray Nauroy - Paris - 2019/2021
-			</p>
-			<p>
-				<strong>Multimédia</strong> - Licence TAIS - Châlon-Sur-Saone - 2018/2019
-			</p>
-			<p><strong>Développement Web</strong> - DUT MMI - Blois - 2016/2018</p>
-			<p>
-				<strong>Baccalauréat Scientifique</strong> - Lycée Voltaire - Orléans - 2016
-			</p>
+			<div class="experience">
+				<div>2022 - 2023</div>
+				<div>
+					<strong>Développement Web Front-End :</strong> Ecole Multimédia - Paris
+					-
+				</div>
+			</div>
+			<div class="experience">
+				<div>2019 - 2021</div>
+				<div>
+					<strong>Formation Théâtrale :</strong> Ecole Auvray Nauroy - Paris
+				</div>
+			</div>
+			<div class="experience">
+				<div>2018 - 2019</div>
+				<div>
+					<strong>Multimédia :</strong> Licence TAIS - Châlon-Sur-Saone
+				</div>
+			</div>
+			<div class="experience">
+				<div>2016 - 2018</div>
+				<div>
+					<strong>Développement Web :</strong> DUT MMI - Blois
+				</div>
+			</div>
+			<div class="experience">
+				<div>2016</div>
+				<div>
+					<strong>Baccalauréat Scientifique :</strong> Lycée Voltaire - Orléans
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -145,9 +176,21 @@
 				margin-bottom: 1rem;
 			}
 
+			.experience {
+				display: grid;
+				grid-template-columns: 2.5rem auto;
+				margin-bottom: 2rem;
+				gap: 0 1rem;
+				align-items: center;
+
+				> div:first-of-type {
+					text-align: center;
+					line-height: 0.8rem;
+				}
+			}
+
 			.skills {
-				margin-left: 2rem;
-				margin-bottom: 1rem;
+				grid-column: 2 / span 1;
 				display: flex;
 				flex-wrap: wrap;
 				gap: 0.5rem;
