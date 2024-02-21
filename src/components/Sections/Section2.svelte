@@ -53,6 +53,11 @@
 						class="img_cover"
 						transition:slide={{ easing: backIn, duration: 500 }}
 					/>
+					<div class="project_description_desktop">
+						<p>
+							{currentProject.description}
+						</p>
+					</div>
 				{/key}
 			</div>
 			{#if currentProject?.link}
@@ -65,7 +70,7 @@
 			{:else}
 				<h3>{currentProject.title}</h3>
 			{/if}
-			<!-- <p></p> -->
+			<p class="project_description_mobile">{currentProject.description}</p>
 		</div>
 
 		<div class="carousel_container carousel_container_phone">
@@ -111,6 +116,20 @@
 			display: flex;
 			flex-direction: column;
 
+			.project_description_mobile {
+				overflow-y: scroll;
+				max-height: 200px;
+			}
+
+			.project_description_desktop {
+				display: none;
+
+				p {
+					// overflow-y: scroll;
+					max-height: 300px;
+				}
+			}
+
 			.carousel_container {
 				overflow-y: hidden;
 				border-radius: 10px;
@@ -135,6 +154,37 @@
 				display: grid;
 				grid-template-columns: auto 5fr 2fr;
 
+				.project_description_mobile {
+					display: none;
+				}
+
+				.project_description_desktop {
+					background: linear-gradient(
+						0deg,
+						rgba(0, 0, 0, 1) 0%,
+						rgba(0, 0, 0, 1) 25%,
+						rgba(0, 0, 0, 0) 100%
+					);
+					opacity: 0;
+					display: flex;
+					align-items: end;
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					right: 0;
+					left: 0;
+					transition: all 300ms;
+
+					p {
+						margin: 1rem;
+						color: var(--color-white);
+					}
+
+					&:hover {
+						opacity: 1;
+					}
+				}
+
 				.controller {
 					width: 1.5rem;
 					grid-template-rows: repeat(5, 1fr);
@@ -152,6 +202,7 @@
 				.carousel_container {
 					&_desktop {
 						aspect-ratio: unset;
+						position: relative;
 						height: 65dvh;
 					}
 					&_phone {
