@@ -1,11 +1,11 @@
-import majoreDesktop from "../assets/images/projects/majore_desktop.png";
-import majorePhone from "../assets/images/projects/majore_phone.png";
-import koacherDesktop from "../assets/images/projects/koacher_desktop.png";
-import koacherPhone from "../assets/images/projects/koacher_phone.png";
-import urbaniakDesktop from "../assets/images/projects/jeanlucurbaniak_desktop.png";
-import urbaniakPhone from "../assets/images/projects/jeanlucurbaniak_phone.png";
-import dorianDesktop from "../assets/images/projects/dorianurbaniak_desktop.png";
-import dorianPhone from "../assets/images/projects/dorianurbaniak_phone.png";
+import majoreDesktop from "../assets/images/projects/majore_desktop.jpg";
+import majorePhone from "../assets/images/projects/majore_phone.jpg";
+import koacherDesktop from "../assets/images/projects/koacher_desktop.jpg";
+import koacherPhone from "../assets/images/projects/koacher_phone.jpg";
+import urbaniakDesktop from "../assets/images/projects/jeanlucurbaniak_desktop.jpg";
+import urbaniakPhone from "../assets/images/projects/jeanlucurbaniak_phone.jpg";
+import dorianDesktop from "../assets/images/projects/dorianurbaniak_desktop.jpg";
+import dorianPhone from "../assets/images/projects/dorianurbaniak_phone.jpg";
 
 export const projects = [
 	{
