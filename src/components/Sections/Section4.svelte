@@ -165,6 +165,7 @@
 <style lang="scss">
 	.section_4 {
 		align-self: baseline;
+		width: 100%;
 
 		.section_body {
 			padding: 1rem;

@@ -46,11 +46,7 @@
 	};
 
 	const handleSlide = async (e: TouchEvent) => {
-		if (!isScrollEnabled) {
-			setScrollTimer();
-			return;
-		}
-		setScrollTimer();
+		if (!isScrollEnabled) return;
 		let scrollableDiv = await isDivScrollable(e.target);
 
 		const currentY = e.touches[0].clientY;
@@ -66,6 +62,7 @@
 		) {
 			currentSection++;
 		}
+		setScrollTimer();
 	};
 
 	const setScrollTimer = () => {
