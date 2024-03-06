@@ -3,28 +3,19 @@
 	import Moi from "../../assets/images/moi.jpg";
 	import LinkedinLogo from "../../assets/icons/linkedin.svg";
 	import GithubLogo from "../../assets/icons/github.svg";
+	import DownloadLogo from "../../assets/icons/download.svg";
+	import CV from "../../assets/images/CV Dorian URBANIAK.pdf";
 
-	let offsetX = 0;
-	let offsetY = 0;
-	let offsetX2 = 0;
-	let offsetY2 = 0;
-	let rayon = 100;
+	let rayon = 10;
 
-	$: float = `translate: ${offsetX}px ${offsetY}px`;
-	$: float2 = `translate: ${offsetX2}px ${offsetY2}px`;
+	$: float = `translate: ${rayon * Math.random()}dvw ${rayon * Math.random()}dvh`;
+	$: float2 = `translate: ${rayon * Math.random()}dvw ${rayon * Math.random()}dvh`;
+	$: float3 = `translate: ${rayon * Math.random()}dvw ${rayon * Math.random()}dvh`;
 
-	function randomInRange(min: number, max: number) {
-		return Math.random() * (max - min) + min;
-	}
-
-	function randomFloat() {
-		offsetX = randomInRange(-rayon, rayon);
-		offsetY = randomInRange(-rayon, rayon);
-		offsetX2 = randomInRange(-rayon, rayon);
-		offsetY2 = randomInRange(-rayon, rayon);
-	}
-
-	setInterval(randomFloat, 2000);
+	setInterval(() => {
+		if (rayon >= 10) rayon--;
+		else rayon++;
+	}, 2000);
 </script>
 
 <div class="section_1">
@@ -38,7 +29,7 @@
 		class="floating"
 		href="https://www.linkedin.com/in/dorian-urbaniak-17b008135/"
 		target="_blank"
-		style={"bottom: 20%; right: 20%;" + float}
+		style={"bottom: 15%; right: 15%;" + float}
 	>
 		<Hexagon
 			outlined
@@ -52,7 +43,7 @@
 		class="floating"
 		href="https://github.com/Blyzbee"
 		target="_blank"
-		style={"top: 20%; left: 20%;" + float2}
+		style={"top: 15%; left: 15%;" + float2}
 	>
 		<Hexagon
 			outlined
@@ -60,6 +51,20 @@
 			image={GithubLogo}
 			width="100px"
 			alt="Github de Dorian URBANIAK"
+		/>
+	</a>
+	<a
+		class="floating"
+		href={CV}
+		download="CV Dorian URBANIAK"
+		style={"bottom: 15%; left: 15%;" + float3}
+	>
+		<Hexagon
+			outlined
+			color="#000000"
+			image={DownloadLogo}
+			width="100px"
+			alt="Télécharger mon CV au format PDF"
 		/>
 	</a>
 	<!-- <Hexagon outlined color="#E0E0E0" /> -->
