@@ -44,6 +44,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		font-size: 0.9rem;
+		text-align: center;
 
 		img {
 			max-width: 85%;
