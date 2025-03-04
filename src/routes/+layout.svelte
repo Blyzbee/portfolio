@@ -18,8 +18,8 @@
 		let currentTarget = div;
 
 		while (!stopWhile) {
-			if (currentTarget.classList[0] === "main_section") stopWhile = true;
-			else if (currentTarget.classList[0] === "scrollable") stopWhile = true;
+			if (currentTarget.classList.contains("main_section")) stopWhile = true;
+			else if (currentTarget.classList.contains("scrollable")) stopWhile = true;
 			else currentTarget = currentTarget.parentElement;
 		}
 		if (currentTarget.classList[0] === "scrollable") return currentTarget;
@@ -69,7 +69,7 @@
 		isScrollEnabled = false;
 		setTimeout(() => {
 			isScrollEnabled = true;
-		}, 300);
+		}, 3000);
 	};
 </script>
 
