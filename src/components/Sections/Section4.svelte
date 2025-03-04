@@ -3,6 +3,15 @@
 	import HexagonBanner from "../Hexagon/HexagonBanner.svelte";
 	import { allSkills } from "../../utils/skills";
 
+	const freelanceSkills = [
+		"React.js",
+		"Node.js",
+		"Typescript",
+		"Firebase",
+		"Git",
+		"Github",
+		"Gitlab",
+	];
 	const alteroneSkills = [
 		"React.js",
 		"Vue.js",
@@ -38,6 +47,25 @@
 	<div class="scrollable section_body">
 		<div>
 			<h3>Expériences professionnelles</h3>
+			<div class="experience">
+				<div>2024 - 2025</div>
+				<div>
+					<strong>Développeur web Front-End :</strong> Freelance - 1 an
+				</div>
+				<div class="skills">
+					<b>Hard skills :</b>
+					{#each freelanceSkills as skill}
+						<div class="skill">
+							<Hexagon
+								color="#FED872"
+								outlined
+								image={allSkills.find((s) => s.alt === skill)?.path}
+								alt={allSkills.find((s) => s.alt === skill)?.alt}
+							/>
+						</div>
+					{/each}
+				</div>
+			</div>
 			<div class="experience">
 				<div>2023</div>
 				<div>
@@ -119,7 +147,7 @@
 			</div>
 			<div class="experience">
 				<div>2017 - 2021</div>
-				<div>
+				<div class="oneLine">
 					<strong>Animateur :</strong> Centre de loisirs - la Ferté St Aubin - 4
 					mois
 				</div>
@@ -129,32 +157,32 @@
 			<h3>Scolarité / Formations</h3>
 			<div class="experience">
 				<div>2022 - 2023</div>
-				<div>
+				<div class="oneLine">
 					<strong>Développement Web Front-End :</strong> Ecole Multimédia - Paris
 					-
 				</div>
 			</div>
 			<div class="experience">
 				<div>2019 - 2021</div>
-				<div>
+				<div class="oneLine">
 					<strong>Formation Théâtrale :</strong> Ecole Auvray Nauroy - Paris
 				</div>
 			</div>
 			<div class="experience">
 				<div>2018 - 2019</div>
-				<div>
+				<div class="oneLine">
 					<strong>Multimédia :</strong> Licence TAIS - Châlon-Sur-Saone
 				</div>
 			</div>
 			<div class="experience">
 				<div>2016 - 2018</div>
-				<div>
+				<div class="oneLine">
 					<strong>Développement Web :</strong> DUT MMI - Blois
 				</div>
 			</div>
 			<div class="experience">
 				<div>2016</div>
-				<div>
+				<div class="oneLine">
 					<strong>Baccalauréat Scientifique :</strong> Lycée Voltaire - Orléans
 				</div>
 			</div>
@@ -187,6 +215,11 @@
 				> div:first-of-type {
 					text-align: center;
 					line-height: 0.8rem;
+					grid-row: 1 / span 2;
+				}
+
+				.oneLine {
+					grid-row: 1 / span 2;
 				}
 			}
 
