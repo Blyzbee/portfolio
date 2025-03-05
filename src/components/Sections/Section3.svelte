@@ -3,8 +3,21 @@
 	import HexagonBanner from "../Hexagon/HexagonBanner.svelte";
 	import { mediaSkills, otherSkills } from "../../utils/skills";
 	import { devSkills } from "../../utils/skills";
+	import { onMount } from "svelte";
 
-	let flipped = "none";
+	let flipped = [...devSkills, ...mediaSkills, ...otherSkills].map(
+		(skill) => skill.alt
+	);
+
+	flipped.forEach((skill) => {
+		setTimeout(
+			() => {
+				flipped = flipped.filter((flippedSkill) => flippedSkill !== skill);
+				console.log(flipped);
+			},
+			40 * flipped.indexOf(skill)
+		);
+	});
 </script>
 
 <div class="section_3">
@@ -22,10 +35,10 @@
 			>
 				{#each devSkills as skill}
 					<button
-						class="card {flipped === skill.alt ? 'flipped' : ''}"
+						class="card {flipped.includes(skill.alt) ? 'flipped' : ''}"
 						on:click={() => {
-							if (flipped === skill.alt) flipped = "none";
-							else flipped = skill.alt;
+							if (flipped.includes(skill.alt)) flipped = [];
+							else flipped = [skill.alt];
 						}}
 					>
 						<div class="front">
@@ -51,10 +64,10 @@
 			>
 				{#each mediaSkills as skill}
 					<button
-						class="card {flipped === skill.alt ? 'flipped' : ''}"
+						class="card {flipped.includes(skill.alt) ? 'flipped' : ''}"
 						on:click={() => {
-							if (flipped === skill.alt) flipped = "none";
-							else flipped = skill.alt;
+							if (flipped.includes(skill.alt)) flipped = [];
+							else flipped = [skill.alt];
 						}}
 					>
 						<div class="front">
@@ -80,10 +93,10 @@
 			>
 				{#each otherSkills as skill}
 					<button
-						class="card {flipped === skill.alt ? 'flipped' : ''}"
+						class="card {flipped.includes(skill.alt) ? 'flipped' : ''}"
 						on:click={() => {
-							if (flipped === skill.alt) flipped = "none";
-							else flipped = skill.alt;
+							if (flipped.includes(skill.alt)) flipped = [];
+							else flipped = [skill.alt];
 						}}
 					>
 						<div class="front">

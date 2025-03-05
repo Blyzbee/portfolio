@@ -14,7 +14,7 @@
 	$: scrollPosition = (currentSection - 1) * 100;
 	$: dynamicScroll = `translate: 0 -${scrollPosition}dvh`;
 
-	// keyboard press support
+	// keyboard arrows press support
 	onMount(() => {
 		window.addEventListener("keydown", handleKeydown);
 		return () => {
@@ -115,7 +115,7 @@
 		</header>
 
 		<main>
-			<slot />
+			<slot currentSection="currentSection" />
 		</main>
 	</div>
 </div>
