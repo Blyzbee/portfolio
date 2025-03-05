@@ -14,6 +14,7 @@
 	$: scrollPosition = (currentSection - 1) * 100;
 	$: dynamicScroll = `translate: 0 -${scrollPosition}dvh`;
 
+	// keyboard press support
 	onMount(() => {
 		window.addEventListener("keydown", handleKeydown);
 		return () => {
@@ -34,6 +35,7 @@
 		}
 	}
 
+	// check if the div is scrollable
 	const isDivScrollable = (div) => {
 		let stopWhile = false;
 		let currentTarget = div;
@@ -47,6 +49,7 @@
 		else return false;
 	};
 
+	// handle mouse scroll event
 	const handleScroll = async (e: WheelEvent) => {
 		let scrollableDiv = await isDivScrollable(e.target as HTMLElement);
 		if (!isScrollEnabled) {
@@ -65,6 +68,7 @@
 		}
 	};
 
+	// handle touch slide event
 	const handleSlide = async (e: TouchEvent) => {
 		if (!isScrollEnabled) return;
 		let scrollableDiv = isDivScrollable(e.target as HTMLElement);
@@ -85,6 +89,7 @@
 		setScrollTimer();
 	};
 
+	// set a timer to prevent multiple scroll events
 	const setScrollTimer = () => {
 		isScrollEnabled = false;
 		setTimeout(() => {
