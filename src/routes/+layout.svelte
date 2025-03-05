@@ -1,6 +1,7 @@
 <script lang="ts">
 	import "../app.scss";
 	import HexagonBanner from "../components/Hexagon/HexagonBanner.svelte";
+	import { onMount } from "svelte";
 
 	let isScrollEnabled = true;
 	let currentSection = 1;
@@ -12,6 +13,26 @@
 	}
 	$: scrollPosition = (currentSection - 1) * 100;
 	$: dynamicScroll = `translate: 0 -${scrollPosition}dvh`;
+
+	onMount(() => {
+		window.addEventListener("keydown", handleKeydown);
+		return () => {
+			window.removeEventListener("keydown", handleKeydown);
+		};
+	});
+
+	function handleKeydown(event: KeyboardEvent) {
+		switch (event.key) {
+			case "ArrowUp":
+				currentSection--;
+				break;
+			case "ArrowDown":
+				currentSection++;
+				break;
+			default:
+				break;
+		}
+	}
 
 	const isDivScrollable = (div) => {
 		let stopWhile = false;
