@@ -3,20 +3,27 @@
 	import HexagonBanner from "../Hexagon/HexagonBanner.svelte";
 	import { mediaSkills, otherSkills } from "../../utils/skills";
 	import { devSkills } from "../../utils/skills";
+	import { currentSection } from "../../stores/section";
 
-	let flipped = [...devSkills, ...mediaSkills, ...otherSkills].map(
-		(skill) => skill.alt
-	);
+	let flipped: string[] = [];
 
-	flipped.forEach((skill) => {
-		setTimeout(
-			() => {
-				flipped = flipped.filter((flippedSkill) => flippedSkill !== skill);
-				console.log(flipped);
-			},
-			40 * flipped.indexOf(skill)
+	$: {
+		if ($currentSection === 3) playAnimation();
+	}
+
+	const playAnimation = () => {
+		flipped = [...devSkills, ...mediaSkills, ...otherSkills].map(
+			(skill) => skill.alt
 		);
-	});
+		flipped.forEach((skill) => {
+			setTimeout(
+				() => {
+					flipped = flipped.filter((flippedSkill) => flippedSkill !== skill);
+				},
+				40 * flipped.indexOf(skill)
+			);
+		});
+	};
 </script>
 
 <div class="section_3">

@@ -2,16 +2,18 @@
 	import "../app.scss";
 	import HexagonBanner from "../components/Hexagon/HexagonBanner.svelte";
 	import { onMount } from "svelte";
+	import { currentSection } from "../stores/section";
 
 	let isScrollEnabled = true;
-	let currentSection = 1;
+	let section = $currentSection;
 	let startY = 0;
 
 	$: {
-		if (currentSection < 1) currentSection = 1;
-		if (currentSection > 4) currentSection = 4;
+		if (section < 1) section = 1;
+		if (section > 4) section = 4;
+		currentSection.set(section);
 	}
-	$: scrollPosition = (currentSection - 1) * 100;
+	$: scrollPosition = (section - 1) * 100;
 	$: dynamicScroll = `translate: 0 -${scrollPosition}dvh`;
 
 	// keyboard arrows press support
@@ -25,10 +27,10 @@
 	function handleKeydown(event: KeyboardEvent) {
 		switch (event.key) {
 			case "ArrowUp":
-				currentSection--;
+				section--;
 				break;
 			case "ArrowDown":
-				currentSection++;
+				section++;
 				break;
 			default:
 				break;
@@ -61,10 +63,10 @@
 			e.deltaY > 0 &&
 			(!scrollableDiv || scrollableDiv.clientHeight === scrollableDiv.scrollTop)
 		) {
-			currentSection++;
+			section++;
 		}
 		if (e.deltaY < 0 && (!scrollableDiv || scrollableDiv.scrollTop === 0)) {
-			currentSection--;
+			section--;
 		}
 	};
 
@@ -78,13 +80,13 @@
 
 		if (deltaY < 100 && deltaY > -100) return;
 		if (deltaY > 100 && (!scrollableDiv || scrollableDiv.scrollTop === 0)) {
-			currentSection--;
+			section--;
 		}
 		if (
 			deltaY < -100 &&
 			(!scrollableDiv || scrollableDiv.clientHeight === scrollableDiv.scrollTop)
 		) {
-			currentSection++;
+			section++;
 		}
 		setScrollTimer();
 	};
@@ -115,7 +117,7 @@
 		</header>
 
 		<main>
-			<slot currentSection="currentSection" />
+			<slot />
 		</main>
 	</div>
 </div>
