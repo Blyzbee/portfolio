@@ -3,7 +3,6 @@
 	import HexagonBanner from "../Hexagon/HexagonBanner.svelte";
 	import { mediaSkills, otherSkills } from "../../utils/skills";
 	import { devSkills } from "../../utils/skills";
-	import { onMount } from "svelte";
 
 	let flipped = [...devSkills, ...mediaSkills, ...otherSkills].map(
 		(skill) => skill.alt

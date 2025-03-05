@@ -8,11 +8,21 @@
 	import { backIn } from "svelte/easing";
 
 	let currentStep = 0;
+	let autoSlide = true;
+	let intervalId: number;
+
 	$: {
 		if (currentStep < 0) currentStep = projects.length - 1;
 		if (currentStep > projects.length - 1) currentStep = 0;
+		if (!autoSlide) clearInterval(intervalId);
 	}
 	$: currentProject = projects[currentStep];
+
+	if (autoSlide) {
+		intervalId = setInterval(() => {
+			currentStep++;
+		}, 3000);
+	}
 </script>
 
 <div class="section_2">
@@ -27,11 +37,21 @@
 			class="controller"
 			style="grid-template-columns: repeat({projects.length + 2}, 1fr);"
 		>
-			<button on:click={() => currentStep--}>
+			<button
+				on:click={() => {
+					currentStep--;
+					autoSlide = false;
+				}}
+			>
 				<img src={arrow} alt="fleche vers le haut" />
 			</button>
 			{#each projects as step, index}
-				<button on:click={() => (currentStep = index)}>
+				<button
+					on:click={() => {
+						currentStep = index;
+						autoSlide = false;
+					}}
+				>
 					<Hexagon outlined color="black">
 						{#if index === currentStep}
 							<Hexagon color="black" width="80%" />
@@ -39,7 +59,12 @@
 					</Hexagon>
 				</button>
 			{/each}
-			<button on:click={() => currentStep++}>
+			<button
+				on:click={() => {
+					currentStep++;
+					autoSlide = false;
+				}}
+			>
 				<img src={arrow} alt="fleche vers le bas" />
 			</button>
 		</div>
