@@ -35,8 +35,9 @@ export const projects = [
 	{
 		title: "Dorian URBANIAK",
 		description:
-			"Voici une petite mise en abime pour vous parler de mon site. Le design et le code de mon site ont été entièrement réalisés par mes soins et à l'aide de Svelte. C'est un langage que je voulais pratiquer et apprendre. Il permet de faire des sites dynamiques comme React tout en étant beaucoup plus léger et rapide à mettre en place.",
+			"Voici une petite mise en abime pour vous parler de mon site. Le design et le code de mon site ont été entièrement réalisés par mes soins et à l'aide de Svelte. C'est un langage que je voulais pratiquer et apprendre. Il permet de faire des sites dynamiques comme React tout en étant beaucoup plus léger et rapide à mettre en place. Vous pouvez avoir accès au code complet sur mon github.",
 		desktopImage: dorianDesktop,
 		phoneImage: dorianPhone,
+		link: "https://github.com/Blyzbee/portfolio",
 	},
 ];
