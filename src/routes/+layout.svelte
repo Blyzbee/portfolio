@@ -38,14 +38,14 @@
 	}
 
 	// check if the div is scrollable
-	const isDivScrollable = (div) => {
+	const isDivScrollable = (div: HTMLElement) => {
 		let stopWhile = false;
 		let currentTarget = div;
 
 		while (!stopWhile) {
 			if (currentTarget.classList.contains("main_section")) stopWhile = true;
 			else if (currentTarget.classList.contains("scrollable")) stopWhile = true;
-			else currentTarget = currentTarget.parentElement;
+			else currentTarget = currentTarget.parentElement as HTMLElement;
 		}
 		if (currentTarget.classList[0] === "scrollable") return currentTarget;
 		else return false;
