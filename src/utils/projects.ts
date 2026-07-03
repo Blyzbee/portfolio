@@ -27,7 +27,7 @@ export const projects = [
 	{
 		title: "Jean-Luc URBANIAK",
 		description:
-			"Le site internet de Jean-Luc URBANIAK est un projet réalisé pour l'activité professionnelle de psychothérapeute de mon père. Je l'ai entièrement codé à l'aide de React.js et des appels API de Firebase. Il est actuellement mis en ligne via Vercel",
+			"Le site internet de Jean-Luc URBANIAK est un projet réalisé pour l'activité professionnelle de psychothérapeute de mon père. Je l'ai entièrement codé à l'aide de React.js et des appels API de Firebase. Il est actuellement mis en ligne via Vercel et je suis en train de le passer sur Next.js.",
 		desktopImage: urbaniakDesktop,
 		phoneImage: urbaniakPhone,
 		link: "https://jeanlucurbaniak.fr",
