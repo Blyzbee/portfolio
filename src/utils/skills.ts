@@ -13,6 +13,8 @@ import html5 from "../assets/icons/skills/html5.png";
 import css3 from "../assets/icons/skills/css3.png";
 import javascript from "../assets/icons/skills/javascript.png";
 import react from "../assets/icons/skills/react.png";
+import next from "../assets/icons/skills/next.png";
+import qwik from "../assets/icons/skills/qwik.png";
 import svelte from "../assets/icons/skills/svelte.png";
 import vue from "../assets/icons/skills/vue.png";
 import nodejs from "../assets/icons/skills/nodejs.png";
@@ -28,6 +30,7 @@ import Github from "../assets/icons/skills/Github.png";
 import gitlab from "../assets/icons/skills/gitlab.png";
 import Netlify from "../assets/icons/skills/Netlify.png";
 import vercel from "../assets/icons/skills/vercel.png";
+import docker from "../assets/icons/skills/docker.png";
 
 export const mediaSkills = [
 	{
@@ -90,6 +93,14 @@ export const devSkills = [
 		alt: "React.js",
 	},
 	{
+		path: next,
+		alt: "Next.js",
+	},
+	{
+		path: qwik,
+		alt: "Qwik",
+	},
+	{
 		path: svelte,
 		alt: "Svelte",
 	},
@@ -147,6 +158,10 @@ export const otherSkills = [
 	{
 		path: vercel,
 		alt: "Vercel",
+	},
+	{
+		path: docker,
+		alt: "Docker",
 	},
 ];
 

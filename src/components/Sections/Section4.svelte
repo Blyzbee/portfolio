@@ -5,12 +5,13 @@
 
 	const freelanceSkills = [
 		"React.js",
+		"Next.js",
+		"Qwik",
 		"Node.js",
 		"Typescript",
 		"Firebase",
 		"Git",
 		"Github",
-		"Gitlab",
 	];
 	const alteroneSkills = [
 		"React.js",
@@ -48,9 +49,9 @@
 		<div>
 			<h3>Expériences professionnelles</h3>
 			<div class="experience">
-				<div>2024 - 2025</div>
+				<div>2024 - 2026</div>
 				<div>
-					<strong>Développeur web Front-End :</strong> Freelance - 1 an
+					<strong>Développeur web Front-End :</strong> Freelance - 2 ans
 				</div>
 				<div class="skills">
 					<b>Hard skills :</b>
