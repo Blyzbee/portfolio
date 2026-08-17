@@ -3,6 +3,7 @@
 	import Section2 from "../components/Sections/Section2.svelte";
 	import Section3 from "../components/Sections/Section3.svelte";
 	import Section4 from "../components/Sections/Section4.svelte";
+	import "../style.css";
 </script>
 
 <Section1 />
@@ -12,6 +13,3 @@
 <Section3 />
 
 <Section4 />
-
-<style lang="scss">
-</style>

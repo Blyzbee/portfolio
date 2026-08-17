@@ -70,7 +70,7 @@
 	<!-- <Hexagon outlined color="#E0E0E0" /> -->
 </div>
 
-<style lang="scss">
+<style lang="css" scoped>
 	.section_1 {
 		position: relative;
 		width: 100%;

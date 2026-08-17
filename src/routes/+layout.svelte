@@ -1,5 +1,4 @@
 <script lang="ts">
-	import "../app.scss";
 	import HexagonBanner from "../components/Hexagon/HexagonBanner.svelte";
 	import { onMount } from "svelte";
 	import { currentSection } from "../stores/section";
@@ -111,7 +110,7 @@
 			<HexagonBanner>
 				<div class="header">
 					<h1>Dorian URBANIAK</h1>
-					<h2>Développeur Front-End</h2>
+					<h2>Développeur Front-End / Full-Stack</h2>
 				</div>
 			</HexagonBanner>
 		</header>
@@ -122,7 +121,7 @@
 	</div>
 </div>
 
-<style lang="scss">
+<style lang="css" scoped>
 	main {
 		display: flex;
 		flex-direction: column;
@@ -133,10 +132,10 @@
 	.main_section {
 		overflow: hidden;
 		height: 100dvh;
+	}
 
-		> div {
-			transition: translate 300ms;
-		}
+	.main_section > div {
+		transition: translate 300ms;
 	}
 
 	header {
@@ -145,22 +144,21 @@
 		align-items: center;
 		width: 100%;
 		height: 25dvh;
+	}
+	.header {
+		background-color: var(--color-black);
+		width: 80vw;
+		max-width: 600px;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 
-		.header {
-			background-color: var(--color-black);
-			width: 80vw;
-			max-width: 600px;
-			height: 100%;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
-
-		h1,
-		h2 {
-			text-align: center;
-			margin: 0;
-		}
+	h1,
+	h2 {
+		text-align: center;
+		margin: 0;
 	}
 </style>

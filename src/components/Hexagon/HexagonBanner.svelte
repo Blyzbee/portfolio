@@ -19,41 +19,42 @@
 	<div class="hexagon_part hexagon_part_2"></div>
 </div>
 
-<style lang="scss">
+<style lang="css" scoped>
 	.hexagon {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		height: 80%;
 		max-height: 160px;
+	}
 
-		.child {
-			height: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			background-color: var(--color-black);
-		}
+	.hexagon .child {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--color-black);
+	}
 
-		.hexagon_part {
-			height: 100%;
-			background-color: var(--color-black);
-			aspect-ratio: 80/277;
+	.hexagon .hexagon_part {
+		height: 100%;
+		background-color: var(--color-black);
+		aspect-ratio: 80/277;
+	}
 
-			&_1 {
-				clip-path: polygon(100% 0, 0 50%, 100% 100%);
-				border-right: 1px var(--color-black) solid;
-			}
-			&_2 {
-				clip-path: polygon(0 0, 100% 50%, 0 100%);
-				border-left: 1px var(--color-black) solid;
-			}
-		}
+	.hexagon .hexagon_part_1 {
+		clip-path: polygon(100% 0, 0 50%, 100% 100%);
+		border-right: 1px var(--color-black) solid;
+	}
 
-		.banner {
-			padding-left: 4rem;
-			padding-right: 2rem;
-			text-wrap: nowrap;
-		}
+	.hexagon .hexagon_part_2 {
+		clip-path: polygon(0 0, 100% 50%, 0 100%);
+		border-left: 1px var(--color-black) solid;
+	}
+
+	.hexagon .banner {
+		padding-left: 4rem;
+		padding-right: 2rem;
+		text-wrap: nowrap;
 	}
 </style>

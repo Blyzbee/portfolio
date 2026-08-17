@@ -13,14 +13,14 @@
 
 	const playAnimation = () => {
 		flipped = [...devSkills, ...mediaSkills, ...otherSkills].map(
-			(skill) => skill.alt
+			(skill) => skill.alt,
 		);
 		flipped.forEach((skill) => {
 			setTimeout(
 				() => {
 					flipped = flipped.filter((flippedSkill) => flippedSkill !== skill);
 				},
-				40 * flipped.indexOf(skill)
+				40 * flipped.indexOf(skill),
 			);
 		});
 	};
@@ -52,7 +52,7 @@
 								color="#FED872"
 								outlined
 								image={skill.path}
-								alt={skill.alt}
+								alt={"Icone de " + skill.alt}
 							/>
 						</div>
 						<div class="back">
@@ -81,7 +81,7 @@
 								color="#FED872"
 								outlined
 								image={skill.path}
-								alt={skill.alt}
+								alt={"Icone de " + skill.alt}
 							/>
 						</div>
 						<div class="back">
@@ -110,7 +110,7 @@
 								color="#FED872"
 								outlined
 								image={skill.path}
-								alt={skill.alt}
+								alt={"Icone de " + skill.alt}
 							/>
 						</div>
 						<div class="back">
@@ -123,60 +123,60 @@
 	</div>
 </div>
 
-<style lang="scss">
+<style lang="css" scoped>
 	.section_3 {
 		width: 100%;
 		height: 100dvh;
+	}
 
-		.section_body {
-			> div {
-				margin: 1rem;
-			}
-			.skills {
-				display: grid;
-				gap: 1rem;
-				padding: 1rem;
-				overflow-x: scroll;
-				scrollbar-width: thin;
+	.section_3 > div:last-child {
+		margin: 1rem 0 0 1rem;
+	}
 
-				&::-webkit-scrollbar {
-					height: 5px;
-				}
-				&::-webkit-scrollbar-thumb {
-					background-color: var(--color-interaction);
-					border-radius: 10px;
-				}
+	.skills {
+		display: grid;
+		gap: 1rem;
+		padding: 1rem;
+		overflow-x: scroll;
+		scrollbar-width: thin;
+	}
 
-				button {
-					position: relative;
-					transform: rotateY(0);
-					transition: transform 0.4s;
-					transform-style: preserve-3d;
-					perspective: 100vh;
-					height: 10dvh;
+	.skills::-webkit-scrollbar {
+		height: 5px;
+	}
 
-					.front,
-					.back {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						position: absolute;
-						width: 100%;
-						height: 100%;
-						left: 0;
-						top: 0;
-						backface-visibility: hidden;
-					}
+	.skills::-webkit-scrollbar-thumb {
+		background-color: var(--color-interaction);
+		border-radius: 10px;
+	}
 
-					.back {
-						transform: rotateY(180deg);
-					}
-				}
+	.skills button {
+		position: relative;
+		transform: rotateY(0);
+		transition: transform 0.4s;
+		transform-style: preserve-3d;
+		perspective: 100vh;
+		height: 10dvh;
+	}
 
-				.flipped {
-					transform: rotateY(180deg);
-				}
-			}
-		}
+	.skills button .front,
+	.skills button .back {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		backface-visibility: hidden;
+	}
+
+	.skills button .back {
+		transform: rotateY(180deg);
+	}
+
+	.skills .flipped {
+		transform: rotateY(180deg);
 	}
 </style>
