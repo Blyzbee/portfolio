@@ -1,9 +1,9 @@
 <script lang="ts">
 	import HexagonBanner from "../Hexagon/HexagonBanner.svelte";
 	import arrow from "../../assets/icons/arrow.svg";
+	import openNew from "../../assets/icons/open_in_new.svg";
 	import Hexagon from "../Hexagon/Hexagon.svelte";
 	import { slide } from "svelte/transition";
-	import Icon from "../Icon.svelte";
 	import { projects } from "../../utils/projects";
 	import { backIn } from "svelte/easing";
 
@@ -90,7 +90,7 @@
 				<a href={currentProject.link} target="_blank">
 					<h3>
 						{currentProject.title}
-						<Icon name="open_in_new" />
+						<img src={openNew} alt="Ouvrir dans un nouvel onglet" width="25" />
 					</h3>
 				</a>
 			{:else}
