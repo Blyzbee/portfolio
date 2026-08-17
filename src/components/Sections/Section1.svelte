@@ -4,6 +4,7 @@
 	import LinkedinLogo from "../../assets/icons/linkedin.svg";
 	import GithubLogo from "../../assets/icons/github.svg";
 	import DownloadLogo from "../../assets/icons/download.svg";
+	import MaltLogo from "../../assets/icons/malt.svg";
 	import CV from "../../assets/images/CV Dorian URBANIAK.pdf";
 
 	let rayon = 10;
@@ -11,6 +12,7 @@
 	$: float = `translate: ${rayon * Math.random()}dvw ${rayon * Math.random()}dvh`;
 	$: float2 = `translate: ${rayon * Math.random()}dvw ${rayon * Math.random()}dvh`;
 	$: float3 = `translate: ${rayon * Math.random()}dvw ${rayon * Math.random()}dvh`;
+	$: float4 = `translate: ${rayon * Math.random()}dvw ${rayon * Math.random()}dvh`;
 
 	setInterval(() => {
 		if (rayon >= 10) rayon--;
@@ -41,9 +43,23 @@
 	</a>
 	<a
 		class="floating"
-		href="https://github.com/Blyzbee"
+		href="https://www.malt.fr/profile/dorianurbaniak"
 		target="_blank"
 		style={"top: 15%; left: 15%;" + float2}
+	>
+		<Hexagon
+			outlined
+			color="#000000"
+			image={MaltLogo}
+			width="100px"
+			alt="Profile Malt de Dorian URBANIAK"
+		/>
+	</a>
+	<a
+		class="floating"
+		href="https://github.com/Blyzbee"
+		target="_blank"
+		style={"top: 15%; right: 15%;" + float3}
 	>
 		<Hexagon
 			outlined
@@ -57,7 +73,7 @@
 		class="floating"
 		href={CV}
 		download="CV Dorian URBANIAK"
-		style={"bottom: 15%; left: 15%;" + float3}
+		style={"bottom: 15%; left: 15%;" + float4}
 	>
 		<Hexagon
 			outlined
