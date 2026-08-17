@@ -32,6 +32,7 @@
 		href="https://www.linkedin.com/in/dorian-urbaniak-17b008135/"
 		target="_blank"
 		style={"bottom: 15%; right: 15%;" + float}
+		title="Voir mon linkedin"
 	>
 		<Hexagon
 			outlined
@@ -46,13 +47,14 @@
 		href="https://www.malt.fr/profile/dorianurbaniak"
 		target="_blank"
 		style={"top: 15%; left: 15%;" + float2}
+		title="Voir mon profil malt"
 	>
 		<Hexagon
 			outlined
 			color="#000000"
 			image={MaltLogo}
 			width="100px"
-			alt="Profile Malt de Dorian URBANIAK"
+			alt="Profil Malt de Dorian URBANIAK"
 		/>
 	</a>
 	<a
@@ -60,6 +62,7 @@
 		href="https://github.com/Blyzbee"
 		target="_blank"
 		style={"top: 15%; right: 15%;" + float3}
+		title="Voir mon github"
 	>
 		<Hexagon
 			outlined
@@ -74,6 +77,7 @@
 		href={CV}
 		download="CV Dorian URBANIAK"
 		style={"bottom: 15%; left: 15%;" + float4}
+		title="Voir mon CV"
 	>
 		<Hexagon
 			outlined
