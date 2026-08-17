@@ -13,5 +13,5 @@
 
 <Section4 />
 
-<style lang="scss">
+<style lang="css">
 </style>

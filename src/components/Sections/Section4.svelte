@@ -191,50 +191,50 @@
 	</div>
 </div>
 
-<style lang="scss">
+<style lang="css" scoped>
 	.section_4 {
 		align-self: baseline;
 		width: 100%;
+	}
 
-		.section_body {
-			padding: 1rem;
-			display: flex;
-			flex-wrap: wrap;
-			gap: 3rem;
+	.section_body {
+		padding: 1rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 3rem;
+	}
 
-			h3 {
-				margin-bottom: 1rem;
-			}
+	.section_body h3 {
+		margin-bottom: 1rem;
+	}
 
-			.experience {
-				display: grid;
-				grid-template-columns: 2.5rem auto;
-				margin-bottom: 2rem;
-				gap: 0 1rem;
-				align-items: center;
+	.section_body .experience {
+		display: grid;
+		grid-template-columns: 2.5rem auto;
+		margin-bottom: 2rem;
+		gap: 0 1rem;
+		align-items: center;
+	}
 
-				> div:first-of-type {
-					text-align: center;
-					line-height: 0.8rem;
-					grid-row: 1 / span 2;
-				}
+	.section_body .experience > div:first-of-type {
+		text-align: center;
+		line-height: 0.8rem;
+		grid-row: 1 / span 2;
+	}
 
-				.oneLine {
-					grid-row: 1 / span 2;
-				}
-			}
+	.section_body .experience .oneLine {
+		grid-row: 1 / span 2;
+	}
 
-			.skills {
-				grid-column: 2 / span 1;
-				display: flex;
-				flex-wrap: wrap;
-				gap: 0.5rem;
-				align-items: center;
+	.section_body .skills {
+		grid-column: 2 / span 1;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		align-items: center;
+	}
 
-				.skill {
-					width: 40px;
-				}
-			}
-		}
+	.section_body .skills .skill {
+		width: 40px;
 	}
 </style>

@@ -25,7 +25,7 @@
 	{/if}
 </div>
 
-<style lang="scss">
+<style lang="css" scoped>
 	.hexagon {
 		position: relative;
 		overflow: hidden;
@@ -46,11 +46,11 @@
 		justify-content: center;
 		font-size: 0.9rem;
 		text-align: center;
+	}
 
-		img {
-			max-width: 85%;
-			max-height: 65%;
-			object-fit: cover;
-		}
+	.hexagon_mask img {
+		max-width: 85%;
+		max-height: 65%;
+		object-fit: cover;
 	}
 </style>
