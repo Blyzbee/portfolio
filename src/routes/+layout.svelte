@@ -1,5 +1,4 @@
 <script lang="ts">
-	import "../style.css";
 	import HexagonBanner from "../components/Hexagon/HexagonBanner.svelte";
 	import { onMount } from "svelte";
 	import { currentSection } from "../stores/section";

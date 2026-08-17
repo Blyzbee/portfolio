@@ -47,6 +47,7 @@
 			</button>
 			{#each projects as step, index}
 				<button
+					name={"voir le site " + step.title}
 					on:click={() => {
 						currentStep = index;
 						autoSlide = false;

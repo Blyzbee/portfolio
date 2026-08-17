@@ -52,7 +52,7 @@
 								color="#FED872"
 								outlined
 								image={skill.path}
-								alt={skill.alt}
+								alt={"Icone de " + skill.alt}
 							/>
 						</div>
 						<div class="back">
@@ -81,7 +81,7 @@
 								color="#FED872"
 								outlined
 								image={skill.path}
-								alt={skill.alt}
+								alt={"Icone de " + skill.alt}
 							/>
 						</div>
 						<div class="back">
@@ -110,7 +110,7 @@
 								color="#FED872"
 								outlined
 								image={skill.path}
-								alt={skill.alt}
+								alt={"Icone de " + skill.alt}
 							/>
 						</div>
 						<div class="back">
