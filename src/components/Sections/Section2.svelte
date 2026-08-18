@@ -38,6 +38,7 @@
 			style="grid-template-columns: repeat({projects.length + 2}, 1fr);"
 		>
 			<button
+				aria-label="carousel précédent"
 				on:click={() => {
 					currentStep--;
 					autoSlide = false;
@@ -47,7 +48,7 @@
 			</button>
 			{#each projects as step, index}
 				<button
-					name={"voir le site " + step.title}
+					aria-label={`carousel bouton ${index}`}
 					on:click={() => {
 						currentStep = index;
 						autoSlide = false;
@@ -61,6 +62,7 @@
 				</button>
 			{/each}
 			<button
+				aria-label="carousel suivant"
 				on:click={() => {
 					currentStep++;
 					autoSlide = false;
