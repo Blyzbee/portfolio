@@ -51,7 +51,7 @@
 			<div class="experience">
 				<div>2024 - 2026</div>
 				<div>
-					<strong>Développeur web Front-End :</strong> Freelance - 2 ans
+					<strong>Développeur Front-End / Full-Stack :</strong> Freelance - 2 ans
 				</div>
 				<div class="skills">
 					<b>Hard skills :</b>
@@ -70,7 +70,7 @@
 			<div class="experience">
 				<div>2023</div>
 				<div>
-					<strong>Développeur web Front-End :</strong> Alter One - 100% télé-travail
+					<strong>Développeur Front-End / Full-Stack:</strong> Alter One - 100% télé-travail
 					- 1 an
 				</div>
 				<div class="skills">
